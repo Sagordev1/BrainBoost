@@ -1,0 +1,243 @@
+/* =========================
+   ACCOUNT SECTION
+========================= */
+
+.account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: calc(100vh - 80px);
+
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+
+/* =========================
+   LOGIN & SIGNUP FORM BOX
+========================= */
+
+.form-box {
+    background: #1e3a5f;
+
+    padding: 40px;
+
+    border-radius: 10px;
+
+    width: 350px;
+
+    text-align: center;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================
+   FORM HEADING
+========================= */
+
+.form-box h2 {
+    margin-bottom: 20px;
+
+    color: #00abf0;
+
+    font-size: 28px;
+}
+
+
+/* =========================
+   INPUT FIELDS
+========================= */
+
+.form-box input {
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 10px 0;
+
+    border: 2px solid transparent;
+
+    border-radius: 5px;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   INPUT FOCUS
+========================= */
+
+.form-box input:focus {
+    outline: none;
+
+    border: 2px solid #00abf0;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.form-box button {
+    width: 100%;
+
+    padding: 12px;
+
+    background: #00abf0;
+
+    border: none;
+
+    border-radius: 5px;
+
+    color: #081b29;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.form-box button:hover {
+    background: #fff;
+
+    color: #00abf0;
+}
+
+
+/* =========================
+   SWITCH TEXT
+========================= */
+
+.switch {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color: #ededed;
+}
+
+
+/* =========================
+   SIGN UP / LOG IN LINK
+========================= */
+
+.switch a {
+    color: #00abf0;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.switch a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   SIGNUP BOX
+   Initially Hidden
+========================= */
+
+#signupBox {
+    display: none;
+}
+
+
+/* =========================
+   PROFILE BOX (Logged In)
+========================= */
+
+.greeting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.active-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    background: #00abf0;
+    color: #fff;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.profile-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.editable-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.editable-field .field-value {
+    flex: 1;
+}
+
+.editable-field .field-input {
+    flex: 1;
+    width: auto;
+    margin: 0;
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+.edit-icon {
+    cursor: pointer;
+    color: #00abf0;
+    font-size: 16px;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.edit-icon:hover {
+    color: #fff;
+}
+
+.edit-icon.editing {
+    color: #4caf50;
+}
+
+.profile-info p {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+}
+
+.profile-info p strong {
+    color: #00abf0;
+    margin-right: 8px;
+}

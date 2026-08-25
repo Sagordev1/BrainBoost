@@ -1,0 +1,322 @@
+html {
+  overflow-y: scroll;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+background-color: #081b29;
+color: #ededed;
+}
+header{
+    position: fixed;
+    /* background-color: yellowgreen; */
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    /* to hold them same line */
+    align-items: center;
+     background-color: #081b29;
+     z-index: 1000;
+}
+.logo{
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.navbar a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #ededed;
+    justify-content: space-between;
+    font-weight: 500px;
+    margin-left: 30px;
+}
+.navbar a:hover{
+    color:#00abf0;
+}
+.home{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 10%;
+    
+}
+
+.homecontent{
+    width: 60%;
+}
+.homecontent h3{
+    font-weight: 700;
+    font-size: 25px;
+   color:rgb(1, 177, 235);
+    
+}
+.homecontent p{
+    margin-top: 10px;
+    font-size: 16px;
+}
+.button{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+
+}
+.button button{
+   border-radius: 8px;
+   cursor: pointer;
+   height: 35px;
+   width: 110px;
+   font-family: bold;
+}
+.first{
+    background-color: #00abf0;
+    border: none;
+    
+}
+.second{
+    background: transparent;
+    color: #00abf0;
+    border: 1px solid #00abf0;
+}
+/* Container for buttons */
+.button {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.button a {
+    text-decoration: none;
+}
+
+
+.button button {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s ease;
+}
+
+
+.button button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+    z-index: -1;
+}
+
+.button button:hover::before {
+    left: 0;
+}
+
+.first {
+    background: #00abf0;
+    color: #081b29;
+    border: 2px solid #00abf0;
+}
+
+.first::before {
+    background: #081b29; 
+}
+
+.first:hover {
+    color: #00abf0; 
+}
+
+
+.second {
+    background: transparent;
+    color: #00abf0;
+    border: 2px solid #00abf0;
+}
+
+.second::before {
+    background: #00abf0; 
+}
+
+.second:hover {
+    color: #081b29; 
+}
+
+.homescreen{
+   position: absolute;
+margin-top: 500px;
+   width: 170px;
+  display: flex;
+  gap: 20px;
+}
+.homescreen a{
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   width: 40px;
+   height: 40px;
+   background-color: transparent;
+   border: 2px solid #00abf0;
+   border-radius: 50%;
+   font-size: 20px;
+   color: #00abf0;
+   text-decoration: none;
+   
+  
+}
+
+.homescreen {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    gap: 20px;
+}
+
+.homescreen a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+
+.homescreen a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00abf0;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.5s ease;
+}
+
+.homescreen a:hover::before {
+    transform: scale(1);
+}
+
+.homescreen a:hover {
+    color: #081b29;
+    box-shadow: 0 0 15px #00abf0;
+}
+.logo {
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 0; /* Starts hidden */
+    animation: slideRight 1s ease forwards; /* Runs animation on refresh */
+}
+
+/* Keyframe Animation */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.navbar a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #ededed;
+    margin-left: 30px;
+    position: relative; /* underline এর জন্য দরকার */
+}
+
+/* Hover effect */
+.navbar a:hover{
+    color: #00abf0;
+}
+
+/* Active link */
+.navbar a.active{
+    color: #00abf0; /* সবসময় hover-এর মতো নীল থাকবে */
+}
+
+/* ============ MOBILE RESPONSIVE ============ */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 5%;
+    }
+
+    .navbar {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar a {
+        margin-left: 0;
+        margin-right: 15px;
+        font-size: 15px;
+    }
+
+    .home {
+        height: auto;
+        min-height: 100vh;
+        padding: 150px 6% 40px;
+        display: block;
+    }
+
+    .homecontent {
+        width: 100%;
+    }
+
+    .homecontent h1 {
+        font-size: 26px;
+    }
+
+    .homecontent p {
+        font-size: 14px;
+    }
+
+    .button {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .button button {
+        width: 100%;
+    }
+
+    .homescreen {
+        position: relative;
+        bottom: auto;
+        margin-top: 25px;
+    }
+}
