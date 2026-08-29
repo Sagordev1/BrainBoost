@@ -1,2 +1,0 @@
-<?php
-define('ADMIN_PASSWORD_HASH', '$2y$10$MjjvcceVNcI5CDSRY7RB2uaqe0JuwftX7wRWaF.rOMQZk5XADe8cS');
