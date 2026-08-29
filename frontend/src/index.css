@@ -11,36 +11,66 @@ body{
 background-color: #081b29;
 color: #ededed;
 }
+
 header{
     position: fixed;
-    /* background-color: yellowgreen; */
     width: 100%;
-    padding: 20px 10%;
+    padding: 15px 5%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    /* to hold them same line */
     align-items: center;
-     background-color: #081b29;
-     z-index: 1000;
+    row-gap: 10px;
+    background-color: #081b29;
+    z-index: 1000;
 }
-.logo{
+
+.logo {
     font-size: 25px;
     color: #ededed;
     text-decoration: none;
     font-weight: bold;
-
+    opacity: 0; /* Starts hidden */
+    animation: slideRight 1s ease forwards; /* Runs animation on refresh */
 }
+
+/* Keyframe Animation */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 8px;
+}
+
 .navbar a{
     text-decoration: none;
     font-size: 18px;
     color: #ededed;
-    justify-content: space-between;
-    font-weight: 500px;
-    margin-left: 30px;
+    font-weight: 500;
+    margin-left: 20px;
+    position: relative; /* underline এর জন্য দরকার */
 }
+
 .navbar a:hover{
     color:#00abf0;
 }
+
+/* Active link */
+.navbar a.active{
+    color: #00abf0; /* সবসময় hover-এর মতো নীল থাকবে */
+}
+
 .home{
     height: 100vh;
     display: flex;
@@ -62,29 +92,7 @@ header{
     margin-top: 10px;
     font-size: 16px;
 }
-.button{
-    margin-top: 20px;
-    display: flex;
-    gap: 20px;
 
-}
-.button button{
-   border-radius: 8px;
-   cursor: pointer;
-   height: 35px;
-   width: 110px;
-   font-family: bold;
-}
-.first{
-    background-color: #00abf0;
-    border: none;
-    
-}
-.second{
-    background: transparent;
-    color: #00abf0;
-    border: 1px solid #00abf0;
-}
 /* Container for buttons */
 .button {
     display: flex;
@@ -95,7 +103,6 @@ header{
 .button a {
     text-decoration: none;
 }
-
 
 .button button {
     position: relative;
@@ -109,7 +116,6 @@ header{
     z-index: 1;
     transition: 0.5s ease;
 }
-
 
 .button button::before {
     content: "";
@@ -140,7 +146,6 @@ header{
     color: #00abf0; 
 }
 
-
 .second {
     background: transparent;
     color: #00abf0;
@@ -153,30 +158,6 @@ header{
 
 .second:hover {
     color: #081b29; 
-}
-
-.homescreen{
-   position: absolute;
-margin-top: 500px;
-   width: 170px;
-  display: flex;
-  gap: 20px;
-}
-.homescreen a{
-   display: inline-flex;
-   justify-content: center;
-   align-items: center;
-   gap: 10px;
-   width: 40px;
-   height: 40px;
-   background-color: transparent;
-   border: 2px solid #00abf0;
-   border-radius: 50%;
-   font-size: 20px;
-   color: #00abf0;
-   text-decoration: none;
-   
-  
 }
 
 .homescreen {
@@ -227,43 +208,6 @@ margin-top: 500px;
     color: #081b29;
     box-shadow: 0 0 15px #00abf0;
 }
-.logo {
-    font-size: 25px;
-    color: #ededed;
-    text-decoration: none;
-    font-weight: bold;
-    opacity: 0; /* Starts hidden */
-    animation: slideRight 1s ease forwards; /* Runs animation on refresh */
-}
-
-/* Keyframe Animation */
-@keyframes slideRight {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-.navbar a{
-    text-decoration: none;
-    font-size: 18px;
-    color: #ededed;
-    margin-left: 30px;
-    position: relative; /* underline এর জন্য দরকার */
-}
-
-/* Hover effect */
-.navbar a:hover{
-    color: #00abf0;
-}
-
-/* Active link */
-.navbar a.active{
-    color: #00abf0; /* সবসময় hover-এর মতো নীল থাকবে */
-}
 
 /* ============ MOBILE RESPONSIVE ============ */
 @media (max-width: 768px) {
@@ -275,8 +219,7 @@ margin-top: 500px;
 
     .navbar {
         margin-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
+        justify-content: flex-start;
         gap: 10px;
     }
 

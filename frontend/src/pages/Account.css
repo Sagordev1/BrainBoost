@@ -1,3 +1,4 @@
+
 /* =========================
    ACCOUNT SECTION
 ========================= */
@@ -146,16 +147,6 @@
 
 .switch a:hover {
     text-decoration: underline;
-}
-
-
-/* =========================
-   SIGNUP BOX
-   Initially Hidden
-========================= */
-
-#signupBox {
-    display: none;
 }
 
 

@@ -1,164 +1,28 @@
-body {
-  background: #081b29;
-  color: #ededed;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
+  return (
+    <>
+      <Header />
+      <div className="recentphage-wrap">
+        <div className="recentphage-container">
+          {phase === "loading" && null}
 
-.container {
-  background: #112e42;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 0 15px #00abf0;
-}
+          {phase === "already" && (
+            <>
+              <h1>{quizKey}</h1>
+              <h2>You have already given this quiz!</h2>
+              <h2 id="score">Your Score : {existingAttempt.score} / {existingAttempt.totalQuestions}</h2>
+              <p style={{ marginTop: 15, color: "#b8b8b8" }}>Go to Dashboard to see the full result.</p>
+              <Link to="/dashboard">
+                <button style={{ marginTop: 15, background: "#00b4fc", color: "#081b29", fontWeight: "bold", fontSize: 16, padding: "12px 30px", border: "none", borderRadius: 8, cursor: "pointer" }}>
+                  Go to Dashboard
+                </button>
+              </Link>
+            </>
+          )}
 
-h1 {
-  margin-bottom: 20px;
-  color: #00abf0;
-}
+          {phase === "waiting" && <WaitingCountdown quizKey={quizKey} seconds={countdown} />}
 
-/* navbar এর মতো উপরে সবসময় লেগে থাকা chapter name + timer */
-#quizStickyHeader {
-  position: sticky;
-  top: 0;
-  z-index: 500;
-  background: #112e42;
-  padding: 15px 0 12px;
-  margin: -30px -30px 20px -30px;
-  border-bottom: 2px solid #00abf0;
-  border-radius: 12px 12px 0 0;
-}
-
-#quizStickyHeader h1 {
-  margin-bottom: 8px;
-}
-
-#quizTimer {
-  color: #ffb703;
-  margin: 0;
-  font-size: 20px;
-}
-
-/* একেকটা প্রশ্নের বক্স */
-.question-block {
-  background: #081b29;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.question-title {
-  margin-bottom: 12px;
-  font-size: 18px;
-}
-
-/* প্রতিটা প্রশ্নের ভেতরের options wrapper */
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.option {
-  background: #3498db;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-  transition: 0.3s;
-  width: 100%;
-}
-
-.option:hover {
-  background: #2980b9;
-}
-
-#submitBtn {
-  display: block;
-  margin-left: auto;
-  margin-right: 0;
-  background: #00abf0;
-  color: #081b29;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 10px;
-  transition: 0.3s;
-}
-
-#submitBtn:hover {
-  background: #19a8e1;
-  color: #19a8e1;
-}
-
-#score {
-  margin-top: 20px;
-  font-size: 20px;
-  color: #00abf0;
-}
-
-#seeResultBtn {
-  background: #00abf0;
-  color: #081b29;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 15px;
-  transition: 0.3s;
-}
-
-#seeResultBtn:hover {
-  background: #fff;
-}
-
-#reviewContainer {
-  margin-top: 25px;
-  text-align: left;
-}
-
-.review-item {
-  background: #081b29;
-  border-left: 5px solid;
-  border-radius: 8px;
-  padding: 12px 15px;
-  margin-bottom: 12px;
-}
-
-.review-item.correct {
-  border-color: #2ecc71;
-}
-
-.review-item.wrong {
-  border-color: #e74c3c;
-}
-
-.review-question {
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-.review-answer {
-  font-size: 14px;
-  color: #ccc;
-}
-
-.review-answer span {
-  font-weight: bold;
-  color: #fff;
-}
+          {phase === "quiz" && <QuizRunner quizKey={quizKey} durationMinutes={duration} />}
+        </div>
+      </div>
+    </>
+  );

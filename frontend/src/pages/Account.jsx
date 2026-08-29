@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Header from "../components/Header";
 import api from "../api";
@@ -5,11 +6,23 @@ import { useAuth } from "../context/AuthContext";
 import "./Account.css";
 
 export default function Account() {
+  console.log("ACCOUNT PAGE LOADED");
   const { user, loading, refreshUser, logout } = useAuth();
   const [showSignup, setShowSignup] = useState(false);
 
-  if (loading) return null;
-
+  if (loading) {
+  return (
+    <>
+      <Header />
+      <section className="account">
+        <div className="form-box">
+          <h2>Loading...</h2>
+          <p className="switch">Checking account...</p>
+        </div>
+      </section>
+    </>
+  );
+}
   return (
     <>
       <Header />
