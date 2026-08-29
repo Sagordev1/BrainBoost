@@ -23,6 +23,9 @@ const quizAttemptSchema = new mongoose.Schema(
 );
 
 
+
+
+
 quizAttemptSchema.index({ user: 1, quizKey: 1 }, { unique: true });
 
 module.exports = mongoose.model("QuizAttempt", quizAttemptSchema);

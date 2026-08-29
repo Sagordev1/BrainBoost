@@ -88,4 +88,9 @@ export default function StartQuiz() {
       </section>
     </>
   );
+
+
+
+
+  
 }
