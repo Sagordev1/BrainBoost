@@ -8,6 +8,7 @@ const quizQuestionSchema = new mongoose.Schema({
   option3: { type: String, required: true },
   option4: { type: String, required: true },
   correctAnswer: { type: String, required: true },
+  
   sortOrder: { type: Number, default: 0 },
 });
 
