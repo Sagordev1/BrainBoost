@@ -6,6 +6,7 @@ const quizSettingsSchema = new mongoose.Schema({
   startTime: { type: Date, default: null },
   activeChapter: { type: String, default: "" },
   durationMinutes: { type: Number, default: 10 },
+  
 });
 
 module.exports = mongoose.model("QuizSettings", quizSettingsSchema);
