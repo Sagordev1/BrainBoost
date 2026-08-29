@@ -11,4 +11,5 @@ if (!plainPassword) {
 
 bcrypt.hash(plainPassword, 10).then((hash) => {
   console.log("\nADMIN_PASSWORD_HASH=" + hash + "\n");
+  
 });
