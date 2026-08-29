@@ -10,6 +10,7 @@ const quizRoutes = require("./routes/quizRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
+
 connectDB();
 
 const app = express();
