@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 
 function requireAdmin(req, res, next) {
-  const token = req.cookies.adminToken;
+  const token =  req.cookies.adminToken;
 
   if (!token) {
     return res.status(401).json({ status: "error", message: "Unauthorized." });
@@ -16,4 +16,14 @@ function requireAdmin(req, res, next) {
   }
 }
 
-module.exports = { requireAdmin };
+module.exports =  { requireAdmin };
+
+
+
+
+
+
+
+
+
+
