@@ -3,6 +3,8 @@
 Ei folder ta tomar original PHP + MySQL project (`brainboost/`) er MERN stack e convert kora version:
 **M**ongoDB + **E**xpress + **R**eact + **N**ode.
 
+A quiz-based interactive learning platform built with the MERN stack (React, Node.js, Express, MongoDB). 🔗 Live: brain-boost-nu.vercel.app
+
 ## Ki ki convert hoyeche (mapping)
 
 | Purono PHP file | Notun jaiga |
